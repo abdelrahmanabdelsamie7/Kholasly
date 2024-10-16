@@ -1,0 +1,50 @@
+<app-nav></app-nav>
+<h3 class="text-center fw-bold display-5 my-5" style="letter-spacing: 5px; text-shadow:5px 5px 5px rgba(0,0,0,0.5)">Update Category</h3>
+<div class="container col-md-6">
+  <a routerLink="/Categories" class="btn btn-outline-dark ">All Categories</a>
+  <div class="card border border-0 shadow p-4 my-4">
+   <form [formGroup]="updateCategory">
+      <div class="row">
+        <div class="col-md-6">
+          <div class="form-group">
+            <label for="title">Enter Title Of Category : </label>
+            <input type="text" name="title" value="{{ CategoryData?.title }}" id="title" formControlName="title" class="form-control mb-2">
+              <span class="text-danger fw-bold " *ngIf="updateCategory.controls.title.invalid && updateCategory.controls.title.touched">
+                  please Enter Valid Date
+                </span>
+          </div>
+          </div>
+         <div class="col-md-6">
+          <div class="form-group">
+           <label for="expected_price">Enter Expected Price Of Category :</label>
+              <input type="number"
+                placeholder="Enter Decimal Value"
+                name="expected_price"
+                id="expected_price"
+                 value="{{ CategoryData?.expected_price }}"
+                formControlName="expected_price"
+                class="form-control mb-2">
+                <span class="text-danger fw-bold " *ngIf="updateCategory.controls.expected_price.invalid && updateCategory.controls.expected_price.touched">
+                  please Enter Valid Date
+                </span>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+            <div class="form-group">
+               <label for="description">Enter Description Of Category : </label>
+            <textarea type="description" name="description"  [value]="CategoryData?.description" id="description" formControlName="description" class="form-control mb-2">
+
+            </textarea>
+               <span class="text-danger fw-bold " *ngIf="updateCategory.controls.description.invalid && updateCategory.controls.description.touched">
+                  please Enter Valid Date
+                </span>
+          </div>
+        </div>
+
+      </div>
+      <button class="btn btn-warning d-block mx-auto my-2" (click)="update()">Update Category</button>
+    </form>
+  </div>
+</div>

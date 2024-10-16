@@ -1,0 +1,26 @@
+<app-user-nav></app-user-nav>
+<div class="container my-4">
+  <div class="row">
+    <div class="col-md-4">
+      <div class="card border border-0 shadow p-2">
+        <div class="card-image">
+          <img src="http://localhost:8000/app/{{ userData?.image }}" class="img-fluid rounded">
+        </div>
+        <div class="card-body text-center">
+          <h6>Name : {{ userData?.name }}</h6>
+          <h6>E-mail : {{ userData?.email }}</h6>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-8 d-flex align-items-center justify-content-center mt-5">
+      <div class="card p-5 shadow border border-0 text-center">
+        <h5>Address : {{ userData?.address }}</h5>
+        <hr>
+        <h5>Phone : {{ userData?.phone }}</h5>
+        <hr>
+        <h5>Date Joined : {{ userData?.created_at | date }}</h5>
+        <hr>
+      </div>
+    </div>
+  </div>
+</div>

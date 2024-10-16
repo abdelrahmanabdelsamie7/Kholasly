@@ -1,0 +1,33 @@
+<app-user-nav></app-user-nav>
+<div class="container my-4">
+  <div class="row">
+    <div class="col-md-4">
+      <div class="card border border-0 shadow p-2">
+        <div class="card-image">
+          <img src="http://localhost:8000/app/{{ workerData?.image }}" class="img-fluid rounded">
+        </div>
+        <div class="card-body text-center">
+          <h6>Name : {{ workerData?.name }}</h6>
+          <h6>E-mail : {{ workerData?.email }}</h6>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-8 d-flex align-items-center justify-content-center mt-5">
+      <div class="card p-5 shadow border border-0 text-center">
+        <h5>Address : {{ workerData?.address }}</h5>
+        <hr>
+        <h5>Phone : {{ workerData?.phone }}</h5>
+        <hr>
+        <h5>Date Joined : {{ workerData?.created_at | date }}</h5>
+        <hr>
+        <h5 *ngIf="workerData?.is_available == 1 ">Avaliable : <i class="fs-4 d-inline-block text-success bi bi-check-lg"></i>  </h5>
+        <h5 *ngIf="workerData?.is_available == 0 ">Avaliable : <i class="fs-4 text-danger bi bi-slash-circle-fill"></i>  </h5>
+        <hr>
+        <h5>Profile Description : {{ workerData?.profileDescription }}</h5>
+        <hr>
+        <h5 *ngIf="workerData?.status ==0 ">جاري المعالجه  </h5>
+        <h5 *ngIf="workerData?.status ==1 ">Done </h5>
+      </div>
+    </div>
+  </div>
+</div>

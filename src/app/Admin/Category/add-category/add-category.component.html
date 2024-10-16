@@ -1,0 +1,42 @@
+<app-nav></app-nav>
+<h3 class="text-center fw-bold display-5 my-5" style="letter-spacing: 5px; text-shadow:5px 5px 5px rgba(0,0,0,0.5)">Add New Category</h3>
+<div class="container col-md-6">
+  <a routerLink="/Categories" class="btn btn-outline-dark ">All Categories</a>
+  <div class="card border border-0 shadow p-4 my-4">
+   <form [formGroup]="addCategory">
+      <div class="row">
+        <div class="col-md-6">
+          <div class="form-group">
+            <label for="title">Enter Title Of Category : </label>
+            <input type="text" name="title" id="title" formControlName="title" class="form-control mb-2">
+          </div>
+          </div>
+         <div class="col-md-6">
+          <div class="form-group">
+           <label for="expected_price">Enter Expected Price Of Category :</label>
+              <input type="number"
+                placeholder="Enter Decimal Value"
+                name="expected_price"
+                id="expected_price"
+                formControlName="expected_price"
+                class="form-control mb-2">
+          <span *ngIf="addCategory.controls['expected_price'].touched" class="text-danger">
+              Expected price must have 2 to 8 decimal places.
+          </span>
+</div>
+          </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12">
+            <div class="form-group">
+               <label for="description">Enter Description Of Category : </label>
+            <textarea type="description" name="description" id="description" formControlName="description" class="form-control mb-2">
+            </textarea>
+          </div>
+        </div>
+
+      </div>
+      <button class="btn btn-dark d-block mx-auto my-2" (click)="Add()">Add Category</button>
+    </form>
+  </div>
+</div>

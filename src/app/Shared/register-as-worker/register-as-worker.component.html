@@ -1,0 +1,115 @@
+<div class="container col-md-6 my-4">
+  <h3 class="text-center display-2 my-3 ">Join T O <span style="letter-spacing: 15px; font-weight:bold"> Kholasly</span> </h3>
+  <div class="card shadow p-4 border border-0 ">
+    <form [formGroup]="registerForm">
+      <div class="row">
+        <div class="col-md-6">
+          <div class="form-group">
+            <label for="name">Enter Your Name : </label>
+            <input type="text" name="name" id="name" formControlName="name" class="form-control mb-2">
+            <span class="text-danger text-center fw-bold" *ngIf="registerForm.controls.name.touched && registerForm.controls.name.invalid">
+              Please Enter Valid Data
+            </span>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="form-group">
+            <label for="email">Enter Your E-mail : </label>
+            <input type="email" name="email" id="email" formControlName="email" class="form-control mb-2">
+            <span class="text-danger text-center fw-bold" *ngIf="registerForm.controls.email.touched && registerForm.controls.email.invalid">
+              Please Enter Valid Data
+            </span>
+          </div>
+
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+          <div class="form-group">
+            <label for="password">Enter Your Password : </label>
+            <input type="password" name="password" id="password" formControlName="password" class="form-control mb-2">
+            <span class="text-danger text-center fw-bold" *ngIf="registerForm.controls.password.touched && registerForm.controls.password.invalid">
+              Please Enter Valid Data
+            </span>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="form-group">
+            <label for="password_confirmation">Confirm Your Password : </label>
+            <input type="password" name="password_confirmation" id="password_confirmation" formControlName="password_confirmation" class="form-control mb-2">
+            <span class="text-danger text-center fw-bold" *ngIf="registerForm.controls.password_confirmation.touched && registerForm.controls.password_confirmation.invalid">
+              Please Enter Valid Data
+            </span>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+          <div class="form-group">
+            <label for="phone">Enter Your Phone : </label>
+            <input type="text" name="phone" id="phone"  formControlName="phone" class="form-control mb-2">
+            <span class="text-danger text-center fw-bold" *ngIf="registerForm.controls.phone.touched && registerForm.controls.phone.invalid">
+              Please Enter Valid Data
+            </span>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="form-group">
+            <label for="address">Enter Your Address : </label>
+            <input type="text" name="address" id="address"  formControlName="address" class="form-control mb-2">
+            <span class="text-danger text-center fw-bold" *ngIf="registerForm.controls.address.touched && registerForm.controls.address.invalid">
+              Please Enter Valid Data
+            </span>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+          <div class="form-group">
+            <label for="image">Enter Your Image</label>
+            <input type="file" (change)="onFileSelected($event)" name="image" id="image" formControlName="image" class="form-control mb-2">
+            <span class="text-danger text-center fw-bold" *ngIf="registerForm.controls.image.touched && registerForm.controls.image.invalid">
+              Please Enter Valid Data
+            </span>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="form-group">
+            <label for="profileDescription">Profile Description :</label>
+            <textarea  class=" form-control mb-2" id="profileDescription" name="profileDescription" formControlName="profileDescription"></textarea>
+            <span class="text-danger text-center fw-bold" *ngIf="registerForm.controls.profileDescription.touched && registerForm.controls.profileDescription.invalid">
+              Please Enter Valid Data
+            </span>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+          <div class="form-group">
+             <label for="is_available">Avaliablity :  </label>
+            <select formControlName="is_available" name="is_available" class="form-control mb-2" id="is_available">
+              <option value="1">Avaliable</option>
+              <option value="0">Not Avaliable</option>
+            </select>
+              <span class="text-danger text-center fw-bold" *ngIf="registerForm.controls.is_available.touched && registerForm.controls.is_available.invalid">
+              Please Enter Valid Data
+            </span>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="form-group">
+             <label for="category_id">Category :</label>
+            <select name="category_id" formControlName="category_id" class="form-control mb-2" id="category_id">
+              <option *ngFor="let item of Categories"  value="{{ item?.id }}">{{ item?.title }}</option>
+            </select>
+              <span class="text-danger text-center fw-bold" *ngIf="registerForm.controls.category_id.touched && registerForm.controls.category_id.invalid">
+              Please Enter Valid Data
+            </span>
+          </div>
+        </div>
+      </div>
+      <button class="btn btn-dark d-block mx-auto my-2" (click)="register()">Register</button>
+    </form>
+    <p class="text-center">I Already have an account  <a routerLink="/LoginWorker">Login</a>  </p>
+  </div>
+</div>
