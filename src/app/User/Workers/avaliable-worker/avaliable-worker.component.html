@@ -1,0 +1,44 @@
+<app-user-nav></app-user-nav>
+<div class="container my-4">
+  <div class="row">
+    <div class="col-md-4">
+      <div class="card border border-0 shadow p-2">
+        <div class="card-image">
+          <img src="http://localhost:8000/app/{{ workerData?.image }}" class="img-fluid rounded">
+        </div>
+        <div class="card-body text-center">
+          <h6>Name : {{ workerData?.name }}</h6>
+          <h6>E-mail : {{ workerData?.email }}</h6>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-8 d-flex  align-items-center justify-content-center mt-2">
+      <div class="card p-4 shadow border border-0 text-center">
+        <h5>Address : {{ workerData?.address }}</h5>
+        <hr>
+        <h5>Phone : {{ workerData?.phone }}</h5>
+        <hr>
+        <h5>Date Joined : {{ workerData?.created_at | date }}</h5>
+        <hr>
+        <h5 *ngIf="workerData?.is_available == 1 ">Avaliable : <i  class="fs-4 d-inline-block text-success bi bi-check-lg"></i>  </h5>
+        <h5 *ngIf="workerData?.is_available == 0 ">Avaliable : <i class="fs-4 text-danger bi bi-slash-circle-fill"></i>  </h5>
+        <hr>
+        <h5>Profile Description : {{ workerData?.profileDescription }}</h5>
+        <hr>
+        <button class="btn mx-auto my-2" (click)="openPaymentModal()">Order</button>
+      </div>
+    </div>
+      <div *ngIf="showPaymentModal" class="modal">
+    <div class="modal-content">
+      <span (click)="closeModal()" class="close">&times;</span>
+      <h2>Select Payment Method</h2>
+      <select [(ngModel)]="payment_method" class="form-control mb-2">
+        <option value="" disabled>Select Payment Method</option>
+        <option value="PayPal">PayPal</option>
+        <option value="Cash">Cash</option>
+      </select>
+      <button (click)="submitOrder(workerData.id)" class="btn btn-success">Submit Order</button>
+    </div>
+  </div>
+  </div>
+</div>

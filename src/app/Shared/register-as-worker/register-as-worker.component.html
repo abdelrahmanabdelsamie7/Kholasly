@@ -1,6 +1,6 @@
 <div class="container col-md-6 my-4">
-  <h3 class="text-center display-2 my-3 ">Join T O <span style="letter-spacing: 15px; font-weight:bold"> Kholasly</span> </h3>
-  <div class="card shadow p-4 border border-0 ">
+  <h3 class="text-center display-2 my-3 ">انضم إلينا </h3>
+  <div class="card shadow p-4 border border-0 my-4">
     <form [formGroup]="registerForm">
       <div class="row">
         <div class="col-md-6">
@@ -66,7 +66,7 @@
       <div class="row">
         <div class="col-md-6">
           <div class="form-group">
-            <label for="image">Enter Your Image</label>
+            <label for="image">Enter Your Image :</label>
             <input type="file" (change)="onFileSelected($event)" name="image" id="image" formControlName="image" class="form-control mb-2">
             <span class="text-danger text-center fw-bold" *ngIf="registerForm.controls.image.touched && registerForm.controls.image.invalid">
               Please Enter Valid Data

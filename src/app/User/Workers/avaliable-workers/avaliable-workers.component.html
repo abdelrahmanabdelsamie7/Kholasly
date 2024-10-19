@@ -1,0 +1,43 @@
+<app-user-nav></app-user-nav>
+<div class="container my-5">
+  <!-- Tabs Navigation -->
+  <ul class="nav nav-tabs text-center" id="myTab" role="tablist">
+    <li class="nav-item "  *ngFor="let category of allData" role="presentation">
+      <button class="nav-link" id="{{ 'tab-' + category.id }}" data-bs-toggle="tab" [attr.data-bs-target]="'#category-' + category.id" type="button" role="tab" [attr.aria-controls]="'category-' + category.id" aria-selected="false">
+        {{ category.title }}
+      </button>
+    </li>
+  </ul>
+
+  <!-- Tabs Content -->
+  <div class="tab-content" id="myTabContent">
+    <div class="tab-pane fade" *ngFor="let category of allData" id="category-{{ category.id }}" role="tabpanel" >
+      <div class="row">
+        <!-- استخدام ng-container كحاوية -->
+        <ng-container *ngIf="hasActiveWorkers(category); else noWorkers">
+          <div class="col-md-4" *ngFor="let worker of category.workers">
+            <div *ngIf="worker.status === 1" class="card my-2 p-4">
+             <a routerLink="/Avaliable_Worker/{{ worker.id }}">
+               <img src="http://localhost:8000/app/{{ worker.image }}" class="card-img-top rounded" alt="{{ worker.name }}">
+            </a>
+              <div class="card-body text-center ">
+                <h5 class="card-title"><strong>Name</strong> : {{ worker.name }}</h5>
+                <h5 class="card-title"><strong>E-mail</strong> : {{ worker.email }}</h5>
+                <h5><strong>Phone :</strong> {{ worker.phone }}</h5>
+                <h5 class="card-text">Description : {{ worker.profileDescription }}</h5>
+                <button class="btn"  routerLink="/Avaliable_Worker/{{ worker.id }}" >Order Him Now </button>
+              </div>
+            </div>
+          </div>
+        </ng-container>
+        <!-- حالة عدم وجود عمال متاحين -->
+        <ng-template #noWorkers>
+          <div class="col-md-12">
+            <p class="text-center">No workers available in this category or no active workers.</p>
+          </div>
+        </ng-template>
+
+      </div>
+    </div>
+  </div>
+</div>

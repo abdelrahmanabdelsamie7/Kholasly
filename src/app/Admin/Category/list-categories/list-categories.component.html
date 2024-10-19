@@ -1,16 +1,16 @@
 <app-nav></app-nav>
 <h3 class="text-center fw-bold display-5 my-5" style="letter-spacing: 5px; text-shadow:5px 5px 5px rgba(0,0,0,0.5)">List All Categories</h3>
-<div class="container col-md-6">
-  <a routerLink="/AddCategory" class="btn btn-outline-dark ">Add New Category</a>
+<div class="container col-md-10 col-lg-6" >
+  <a routerLink="/AddCategory" class="btn">Add New Category</a>
   <div class="card border border-0 shadow p-4 my-4">
-    <table class="table table-dark table-hover table-striped">
+    <table class="table table-hover table-striped table-responsive">
       <thead>
         <tr>
-          <th># : </th>
-          <th>Title : </th>
-          <th>Description : </th>
-          <th>Expected Price : </th>
-          <th colspan="3" class="text-center">Action :</th>
+          <th>#</th>
+          <th>Title</th>
+          <th>Description</th>
+          <th>Expected Price</th>
+          <th colspan="3" class="text-center">Action</th>
         </tr>
       </thead>
       <tbody>
@@ -19,9 +19,9 @@
           <td>{{ item?.title }}</td>
           <td>{{ item?.description}}</td>
           <td>{{ item?.expected_price }}</td>
+          <td><a  routerLink="/Category/{{ item.id }}" class="btn"> <i class="bi bi-eye-fill fs-5 text-primary"></i></a> </td>
           <td><a routerLink="/UpdateCategory/{{ item.id }}" class="btn"><i class="fs-5 text-warning bi bi-pencil"></i></a></td>
           <td><a class="btn" (click)="deleteCategory(item?.id)"><i class="bi bi-trash fs-5 text-danger"></i></a> </td>
-          <td><a class="btn" routerLink="/Category/{{ item.id }}" class=""> <i class="bi bi-eye-fill fs-4 text-primary"></i></a> </td>
       </tr>
       </tbody>
     </table>

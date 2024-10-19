@@ -1,0 +1,8 @@
+h3 {
+  font-family: var(--arabic-font);
+  font-weight: 700;
+}
+p a {
+  color: var(--hint-color);
+  text-decoration: underline;
+}

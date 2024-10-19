@@ -1,0 +1,32 @@
+/* src/app/order/order.component.css */
+.modal {
+  display: block; /* إظهار النموذج */
+  position: fixed; /* يجعل النموذج ثابتًا */
+  z-index: 1; /* يضمن أن النموذج يظهر فوق المحتوى */
+  left: 0;
+  top: 0;
+  width: 100%; /* العرض الكامل */
+  height: 100%; /* الارتفاع الكامل */
+  overflow: auto; /* إضافة التمرير إذا لزم الأمر */
+  background-color: rgb(0,0,0); /* اللون الأسود */
+  background-color: rgba(0,0,0,0.4); /* لون خلفية مع الشفافية */
+}
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto; /* 15% من الأعلى ووسط الشاشة */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 50%; /* عرض النموذج */
+}
+.close {
+  color: #aaa;
+  float: right; /* جعل الزر في الزاوية العليا */
+  font-size: 28px;
+  font-weight: bold;
+}
+.close:hover,
+.close:focus {
+  color: black; /* تغيير اللون عند التحويم */
+  text-decoration: none;
+  cursor: pointer;
+}

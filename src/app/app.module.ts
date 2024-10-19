@@ -18,10 +18,16 @@ import { UserNavComponent } from './User/shared/user-nav/user-nav.component';
 import { ListCategoriesComponent } from './Admin/Category/list-categories/list-categories.component';
 import { AddCategoryComponent } from './Admin/Category/add-category/add-category.component';
 import { ShowCategoryComponent } from './Admin/Category/show-category/show-category.component';
-import { ListWorkersComponent } from './Admin/Wokers/list-workers/list-workers.component';
 import { UpdateCategoryComponent } from './Admin/Category/update-category/update-category.component';
 import { DashboardComponent } from './Woker/dashboard/dashboard.component';
 import { WorkerNavComponent } from './Woker/shared/worker-nav/worker-nav.component';
+import { AddWorkerComponent } from './Admin/Workers/add-worker/add-worker.component';
+import { UpdateWorkerComponent } from './Admin/Workers/update-worker/update-worker.component';
+import { ShowWorkerComponent } from './Admin/Workers/show-worker/show-worker.component';
+import { AllWorkersComponent } from './Admin/Workers/all-workers/all-workers.component';
+import { AvaliableWorkersComponent } from './User/Workers/avaliable-workers/avaliable-workers.component';
+import { AvaliableWorkerComponent } from './User/Workers/avaliable-worker/avaliable-worker.component';
+import { AllOrdersComponent } from './User/Orders/all-orders/all-orders.component';
 
 @NgModule({
   declarations: [
@@ -39,10 +45,16 @@ import { WorkerNavComponent } from './Woker/shared/worker-nav/worker-nav.compone
     ListCategoriesComponent,
     AddCategoryComponent,
     ShowCategoryComponent,
-    ListWorkersComponent,
     UpdateCategoryComponent,
     DashboardComponent,
     WorkerNavComponent,
+    AddWorkerComponent,
+    UpdateWorkerComponent,
+    ShowWorkerComponent,
+    AllWorkersComponent,
+    AvaliableWorkersComponent,
+    AvaliableWorkerComponent,
+    AllOrdersComponent,
   ],
   imports: [
     BrowserModule,

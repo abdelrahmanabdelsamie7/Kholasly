@@ -16,6 +16,7 @@ export class UserDashboardComponent {
       .subscribe((data: any) => {
         this.userData = data;
         console.log(data);
+        localStorage.setItem('user_id', data.id);
       });
   }
 }

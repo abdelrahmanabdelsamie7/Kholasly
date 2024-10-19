@@ -20,7 +20,7 @@ export class LoginAsWorkerComponent {
       .subscribe((data: any) => {
         console.log(data);
         localStorage.setItem('workerToken', data.access_token);
-        this._Router.navigateByUrl('/Worker');
+        this._Router.navigateByUrl('/workerDashboard');
       });
   }
 }

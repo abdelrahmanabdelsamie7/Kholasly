@@ -1,10 +1,10 @@
 <app-nav></app-nav>
 <div class="container col-md-6 my-4 ">
   <div class="card border text-center border-0 shadow p-5 mt-5">
-    <h5 class="fw-bold">Welcome Back ya {{ adminData?.name }}</h5>
+    <h5>مرحبا بعوتك يا  <span >{{ adminData?.name }} </span></h5>
     <hr>
-    <h5 class="fw-bold">Your E-mail : {{ adminData?.email }}</h5>
+    <h5> الإيميل :  <span >{{ adminData?.email }} </span></h5>
     <hr>
-    <h6 class="fw-bold">Date Joined : {{ adminData?.created_at |date }}</h6>
+    <h5> تاريخ الإنضمام  : <span >{{ adminData?.created_at |date }} </span></h5>
   </div>
 </div>

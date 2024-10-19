@@ -13,9 +13,9 @@ export class UpdateCategoryComponent {
   Workers!: any;
   CategoryData!: any;
   updateCategory = new FormGroup({
-    title: new FormControl('', [Validators.required]),
-    description: new FormControl('', [Validators.required]),
-    expected_price: new FormControl('', [Validators.required]),
+    title: new FormControl(''),
+    description: new FormControl(''),
+    expected_price: new FormControl(''),
   });
   constructor(
     private _HttpClient: HttpClient,

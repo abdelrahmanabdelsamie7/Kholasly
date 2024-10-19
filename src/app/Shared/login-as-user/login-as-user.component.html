@@ -1,23 +1,23 @@
 <div class="container col-md-6 my-4">
-  <h3 class="text-center display-2 my-3 ">Welcome Back ! </h3>
+  <h3 class="text-center display-2 my-5 ">مرحبا بعودتك</h3>
   <div class="card shadow p-4 border border-0 ">
     <form [formGroup]="loginForm">
       <div class="row">
 
-        <div class="col-md-12">
+        <div class="col-lg-6">
           <div class="form-group">
             <label for="email">Enter Your E-mail : </label>
             <input type="email" name="email" id="email" formControlName="email" class="form-control mb-2">
           </div>
-          <div class="col-md-12">
+        </div>
+        <div class="col-lg-6">
             <div class="form-group">
                <label for="password">Enter Your Password : </label>
             <input type="password" name="password" id="password" formControlName="password" class="form-control mb-2">
           </div>
         </div>
-        </div>
       </div>
-      <button class="btn btn-dark d-block mx-auto my-2" (click)="Login()">Login</button>
+      <button class="btn btn-dark d-block mx-auto my-2 px-4" (click)="Login()">Login</button>
     </form>
   </div>
 </div>

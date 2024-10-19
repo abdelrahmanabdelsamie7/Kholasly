@@ -30,4 +30,15 @@ export class ShowCategoryComponent {
         this.Workers = data.data.workers;
       });
   }
+  deleteWorker(id: any) {
+    this._HttpClient
+      .delete(`http://localhost:8000/api/Workers/${id}`, {
+        headers: {
+          Authorization: 'Bearer ' + localStorage.getItem('adminToken'),
+        },
+      })
+      .subscribe((data: any) => {
+        window.location.reload();
+      });
+  }
 }

@@ -1,0 +1,105 @@
+<app-nav></app-nav>
+<h3 class="text-center fw-bold display-5 my-5" style="letter-spacing: 5px; text-shadow:5px 5px 5px rgba(0,0,0,0.5)">Update Worker Info </h3>
+<div class="container col-md-6">
+  <a routerLink="/Workers" class="btn btn-outline-dark ">All Workers</a>
+  <div class="card border border-0 shadow p-4 my-4">
+   <form [formGroup]="updateWorker">
+      <div class="row">
+        <div class="col-md-6">
+          <div class="form-group">
+            <label for="name">Update name Of Worker : <span class="text-warning"> {{ workerData?.name }} </span> </label>
+            <input type="text" name="name" id="name" formControlName="name" class="form-control mb-2">
+              <span class="text-danger fw-bold " *ngIf="updateWorker.controls.name.invalid && updateWorker.controls.name.touched">
+                  please Enter Valid Date
+                </span>
+          </div>
+          </div>
+         <div class="col-md-6">
+          <div class="form-group">
+           <label for="password">Update Password Of Worker :  </label>
+              <input type="password"
+                name="password"
+                id="password"
+                formControlName="password"
+                class="form-control mb-2">
+                <span class="text-danger fw-bold " *ngIf="updateWorker.controls.password.invalid && updateWorker.controls.password.touched">
+                  please Enter Valid Date
+                </span>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+            <div class="form-group">
+               <label for="phone">Update Phone Of Worker : <span class="text-warning"> {{ workerData?.phone }}</span> </label>
+               <input type="text" name="phone"  id="phone" formControlName="phone" class="form-control mb-2">
+               <span class="text-danger fw-bold " *ngIf="updateWorker.controls.phone.invalid && updateWorker.controls.phone.touched">
+                  please Enter Valid Date
+                </span>
+          </div>
+        </div>
+         <div class="col-md-6">
+            <div class="form-group">
+               <label for="address">Update Address Of Worker : <span class="text-warning">  {{ workerData?.address }} </span> </label>
+               <input type="text" name="address"  id="address" formControlName="address" class="form-control mb-2">
+               <span class="text-danger fw-bold " *ngIf="updateWorker.controls.address.invalid && updateWorker.controls.address.touched">
+                  please Enter Valid Date
+                </span>
+          </div>
+        </div>
+      </div>
+       <div class="row">
+        <div class="col-md-6">
+            <div class="form-group">
+               <label for="status">Update status Of Worker : <span class="text-warning"> {{ workerData?.status }} </span> </label>
+               <select  name="status" id="status" formControlName="status" class="form-control mb-2">
+                <option value="0">Disable 0 </option>
+                <option value="1">Able 1 </option>
+               </select>
+               <span class="text-danger fw-bold " *ngIf="updateWorker.controls.status.invalid && updateWorker.controls.status.touched">
+                  please Enter Valid Date
+                </span>
+          </div>
+        </div>
+       <div class="col-md-6">
+            <div class="form-group">
+               <label for="category_id">Update category_id Of Worker :  </label>
+              <select name="category_id" id="category_id" formControlName="category_id" class="form-control mb-2">
+            <option *ngFor="let item of Categories" [value]="item.id" [selected]="item.id === workerData?.category_id">
+                {{ item.title }}
+             </option>
+            </select>
+               <span class="text-danger fw-bold " *ngIf="updateWorker.controls.category_id.invalid && updateWorker.controls.category_id.touched">
+                  please Enter Valid Date
+                </span>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+          <div class="col-md-6">
+            <div class="form-group">
+               <label for="is_available">Update Avaliablity Of Worker : <span class="text-warning"> {{ workerData?.is_available }} </span> </label>
+               <select  name="is_available" id="is_available" formControlName="is_available" class="form-control mb-2">
+                <option value="0">Not Avaliable 0</option>
+                <option value="1">Avaliable 1 </option>
+               </select>
+               <span class="text-danger fw-bold " *ngIf="updateWorker.controls.is_available.invalid && updateWorker.controls.is_available.touched">
+                  please Enter Valid Date
+                </span>
+          </div>
+        </div>
+         <div class="col-md-6">
+            <div class="form-group">
+               <label for="profileDescription">Update profileDescription Of Worker : <span class="text-warning"> {{ workerData?.profileDescription }}</span> </label>
+                <textarea  name="profileDescription"  id="profileDescription" formControlName="profileDescription" class="form-control mb-2">
+                  </textarea>
+               <span class="text-danger fw-bold " *ngIf="updateWorker.controls.profileDescription.invalid && updateWorker.controls.profileDescription.touched">
+                  please Enter Valid Date
+                </span>
+          </div>
+        </div>
+      </div>
+      <button class="btn btn-warning d-block mx-auto my-2" (click)="update()">Update Worker</button>
+    </form>
+  </div>
+</div>

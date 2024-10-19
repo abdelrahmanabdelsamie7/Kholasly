@@ -1,0 +1,8 @@
+h5 {
+  font-weight: 700;
+  direction: rtl;
+  font-family: var(--arabic-font);
+}
+h5 span {
+  color: var(--bg-body);
+}
